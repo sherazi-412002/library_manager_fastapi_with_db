@@ -1,0 +1,23 @@
+[project]
+name = "library-manager-wdb"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Syed Shoaib Sherazi",email = "syedshoaibsherazi412002@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi (>=0.115.11,<0.116.0)",
+    "uvicorn (>=0.34.0,<0.35.0)",
+    "sqlmodel (>=0.0.24,<0.0.25)",
+    "psycopg2-binary (>=2.9.10,<3.0.0)"
+]
+
+[tool.poetry]
+packages = [{include = "library_manager_wdb", from = "src"}]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
