@@ -1,6 +1,6 @@
 from fastapi import FastAPI,HTTPException
 from sqlmodel import SQLModel, Field, create_engine, Session,select
-from src.library_manager_wdb import settings
+from api import settings
 from typing import List
  
 
@@ -24,20 +24,20 @@ engine = create_engine(connection_string, connect_args={"sslmode":"require"},poo
 
 SQLModel.metadata.create_all(engine)
 
-book1 = Book(title='urdu',author='allama iqbal',year=2025,genre='course',read=True)
-book2 = Book(title='english',author='abcde',year=2022,genre='course',read=False)
+# book1 = Book(title='urdu',author='allama iqbal',year=2025,genre='course',read=True)
+# book2 = Book(title='english',author='abcde',year=2022,genre='course',read=False)
 
 
 # Session :: seperate session for each functionality
 session = Session(engine)
 
 # create books in database
-session.add(book1)
-session.add(book2)
-print(f"Before Commit {book1}")
-session.commit()
-print(f"After Commit {book1}")
-session.close()
+# session.add(book1)
+# session.add(book2)
+# print(f"Before Commit {book1}")
+# session.commit()
+# print(f"After Commit {book1}")
+# session.close()
 
 
 
